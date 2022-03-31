@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 class AverageSalary {
 
     public static double averageSalary(List<Employee> employees) {
-        return 0d; // write your code here
+        return employees.stream().collect(Collectors.averagingDouble(Employee::getSalary));
     }
 
     public static void main(String[] args) {
