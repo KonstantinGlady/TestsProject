@@ -9,6 +9,18 @@ import java.util.stream.Collectors;
 public class Main {
 
     public static void main(String[] args) {
+
+        List<Integer> list1 = Arrays.asList(1,3,5,7);
+        List<Integer> list2 = Arrays.asList(2,4,6,8);
+
+       List<int[]> pairs = list1.stream()
+                .flatMap(i -> list2.stream()
+                        .map(j -> new int[]{i,j})
+                        ).collect(Collectors.toList());
+       pairs.forEach(x -> System.out.println(x[0] + " " + x[1]));
+
+       //// transactions tasks
+
         Trader Alan = new Trader("Alan", "Milan");
         Trader Mark = new Trader("Mark", "London");
         Trader Jonathan = new Trader("Jonathan", "Cambridge");
