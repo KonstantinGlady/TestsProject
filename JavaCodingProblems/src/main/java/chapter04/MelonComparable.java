@@ -7,6 +7,11 @@ public class MelonComparable implements Comparable {
     private final String type;
     private final int weight;
 
+    public MelonComparable() {
+        type = "";
+        weight = 0;
+    }
+
     public MelonComparable(String type, int weight) {
         this.type = type;
         this.weight = weight;

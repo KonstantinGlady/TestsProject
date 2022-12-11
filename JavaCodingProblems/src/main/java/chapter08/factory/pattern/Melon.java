@@ -6,6 +6,7 @@ public class Melon implements Fruit {
     private int weight;
     private String color;
 
+    public Melon() {}
     public Melon(String name, int weight, String color) {
         this.name = name;
         this.weight = weight;

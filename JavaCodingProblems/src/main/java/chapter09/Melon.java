@@ -1,4 +1,4 @@
-package chapter08.practice2.functions;
+package chapter09;
 
 import java.util.Objects;
 
@@ -6,14 +6,13 @@ public class Melon {
 
     private String type;
     private int weight;
-    private String origin;
 
-    public Melon() {}
+    public Melon() {
+    }
 
-    public Melon(String type, int weight, String origin) {
+    public Melon(String type, int weight) {
         this.type = type;
         this.weight = weight;
-        this.origin = origin;
     }
 
     public String getType() {
@@ -24,22 +23,27 @@ public class Melon {
         return weight;
     }
 
-    public String getOrigin() {
-        return origin;
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
     }
 
     public String toString() {
-        return type + " " + weight + " " + origin;
+        return type + " " + weight;
     }
 
     public int hashCode() {
-        return Objects.hash(type, weight, origin);
+        return Objects.hash(type, weight);
     }
 
     public boolean equals(Object o) {
-        if (o == this) return true;
+        if (this == o) return true;
         if (o == null || o.getClass() != getClass()) return false;
+
         Melon m = (Melon) o;
-        return m.weight == weight && Objects.equals(m.type, type) && Objects.equals(m.origin, origin);
+        return Objects.equals(type, m.type) && weight == m.weight;
     }
 }

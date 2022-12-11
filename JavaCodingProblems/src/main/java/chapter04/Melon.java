@@ -7,7 +7,7 @@ public class Melon {
     private final String type;
     private final int weight;
 
-    private Melon() {
+    public Melon() {
         this.type = "";
         this.weight = 0;
     }

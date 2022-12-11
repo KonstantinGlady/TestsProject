@@ -17,6 +17,7 @@ public final class Filters {
         for (Melon m : melons) {
             if (m != null && type.equalsIgnoreCase(m.getType())) result.add(m);
         }
+
         return result;
     }
 
