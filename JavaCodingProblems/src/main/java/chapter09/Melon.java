@@ -1,5 +1,7 @@
 package chapter09;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Melon {
@@ -7,12 +9,25 @@ public class Melon {
     private String type;
     private int weight;
 
+    private List<String> pests;
+
     public Melon() {
     }
 
     public Melon(String type, int weight) {
         this.type = type;
         this.weight = weight;
+        this.pests = new ArrayList<>();
+    }
+
+    public Melon(String type, int weight, List<String> pests) {
+        this.type = type;
+        this.weight = weight;
+        this.pests = pests;
+    }
+
+    public List<String> getPests() {
+        return pests;
     }
 
     public String getType() {
@@ -46,4 +61,6 @@ public class Melon {
         Melon m = (Melon) o;
         return Objects.equals(type, m.type) && weight == m.weight;
     }
+
+
 }

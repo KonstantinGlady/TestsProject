@@ -3,6 +3,8 @@ package chapter09.flatmap;
 import chapter09.Melon;
 
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,5 +22,17 @@ public class Main {
                 .distinct()
                 .collect(Collectors.toList());
         System.out.println(result);
+
+        List<List<String>> list = List.of(
+                List.of("Gac", "Cantaloupe"),
+                List.of("Hemi", "Gac"),
+                List.of("Cantaloupe", "Appolo")
+        );
+
+        List<String> result2 = list.stream()
+                .flatMap(Collection::stream)
+                .distinct()
+                .collect(Collectors.toList());
+        result2.forEach(System.out::println);
     }
 }

@@ -4,12 +4,10 @@ import java.util.Objects;
 
 public class Melon {
 
-    private final String type;
-    private final int weight;
+    private String type;
+    private int weight;
 
     public Melon() {
-        this.type = "";
-        this.weight = 0;
     }
 
     public Melon(String type, int weight) {
