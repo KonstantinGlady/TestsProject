@@ -4,6 +4,9 @@ public class Cake {
 
     private String decorations;
 
+    public Cake() {
+    }
+
     public Cake(String decorations) {
         this.decorations = decorations;
     }
