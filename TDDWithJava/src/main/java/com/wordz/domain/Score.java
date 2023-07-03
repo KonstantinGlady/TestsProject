@@ -4,6 +4,7 @@ public class Score {
 
     private final String correct;
     private Letter result = Letter.INCORRECT;
+    private int position;
 
     public Score(String correct) {
         this.correct = correct;
@@ -13,14 +14,27 @@ public class Score {
         return result;
     }
 
-    public void assess(int position, String attempt) {
+    public void assess(String attempt) {
 
-        if (isCorrectLetter(position, attempt)) {
-            result = Letter.CORRECT;
+        for (char current : attempt.toCharArray()) {
+
+            if (isCorrectLetter(current)) {
+
+                result = Letter.CORRECT;
+            } else if (occursInWord(current)) {
+
+                result = Letter.PART_CORRECT;
+            }
+
+            position++;
         }
     }
 
-    private boolean isCorrectLetter(int position, String attempt) {
-        return correct.charAt(position) == attempt.charAt(position);
+    private boolean occursInWord(char current) {
+        return correct.contains(String.valueOf(current));
+    }
+
+    private boolean isCorrectLetter(char current) {
+        return correct.charAt(position) == current;
     }
 }

@@ -24,7 +24,7 @@ class WordTest {
     @Test
     void secondLetterWrongPosition() {
         var word = new Word("AR");
-        var score = word.guess("ZR");
+        var score = word.guess("ZA");
         assertScoreForLetter(score, 1, Letter.PART_CORRECT);
     }
 
