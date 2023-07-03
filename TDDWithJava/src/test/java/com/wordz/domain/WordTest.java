@@ -21,6 +21,13 @@ class WordTest {
         assertScoreForLetter(score, 0, Letter.CORRECT);
     }
 
+    @Test
+    void secondLetterWrongPosition() {
+        var word = new Word("AR");
+        var score = word.guess("ZR");
+        assertScoreForLetter(score, 1, Letter.PART_CORRECT);
+    }
+
     private void assertScoreForLetter(Score score, int position, Letter expected) {
         assertThat(score.letter(position)).isEqualTo(expected);
     }
