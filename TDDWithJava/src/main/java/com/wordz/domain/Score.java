@@ -15,8 +15,12 @@ public class Score {
 
     public void assess(int position, String attempt) {
 
-        if (correct.charAt(position) == attempt.charAt(position)) {
+        if (isCorrectLetter(position, attempt)) {
             result = Letter.CORRECT;
         }
+    }
+
+    private boolean isCorrectLetter(int position, String attempt) {
+        return correct.charAt(position) == attempt.charAt(position);
     }
 }
