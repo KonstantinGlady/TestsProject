@@ -20,7 +20,8 @@ class WordSelectionFailureTest {
     @Test
     void reportsWordNotFound() {
         doThrow(new WordRepositoryException())
-                .when(repository.fetchWordByNumber(anyInt()));
+                .when(repository)
+                .fetchWordByNumber(anyInt());
 
         var selection = new WordSelection(repository, random);
 

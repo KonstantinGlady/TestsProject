@@ -5,6 +5,11 @@ public class WordSelection {
     }
 
     public String chooseRandomWord() {
-        return null;
+
+        try {
+           return " ";
+        } catch (WordRepositoryException ex) {
+            throw new WordSelectionException("Could not select word", ex);
+        }
     }
 }
